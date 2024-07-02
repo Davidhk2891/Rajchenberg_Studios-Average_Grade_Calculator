@@ -1,0 +1,111 @@
+/* Variables */
+
+:root {
+    --agc-color-white: white;
+    --agc-color-gray: gray;
+    --agc-color-black: black;
+    --agc-color-light-gray: #F0F0F0;
+    --agc-font-s-large: 1.2rem;
+}
+
+/* App styling */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+body {
+    background-color: var(--agc-color-light-gray);
+}
+
+main {
+    background-color: white;
+    width: 75%;
+    margin: 4px auto;
+    border: 1px solid var(--agc-color-gray);
+}
+
+/* Header styling */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px;
+    border-bottom: 1px solid var(--agc-color-gray);
+}
+
+#header-logo-bundle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+#header-logo-text {
+    font-size: var(--agc-font-s-large);
+    margin-bottom: 2px;
+}
+
+#header-nav {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#header-nav-bar > li {
+    list-style-type: none;
+}
+
+#header-nav-bar > li > a {
+    color: var(--agc-color-black);
+    text-decoration: none;
+}
+
+#header-nav-bar > li > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Media queries */
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;       
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    
+}
+
+@media only screen and (max-width: 720px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (max-width: 550px) {
+
+}
+
+@media only screen and (max-width: 420px) {
+
+}
+
