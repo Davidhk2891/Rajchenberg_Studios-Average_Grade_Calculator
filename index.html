@@ -50,7 +50,7 @@
                                     <input type="number" min="1" max="100" value="1" width="50" />
                                 </label>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     <div id="data-set-container">
                         <p>Your data set</p>
@@ -80,10 +80,20 @@
                     </div>
                     <div id="result-main-container">
                         <div id="result-main-table-container">
-                            
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Score</th>
+                                        <th>Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
                         </div>
                         <div id="result-main-summary-container">
-
+                            <p id="msg-avg-final-score"></p>
+                            <p id="msg-final-grade"></p>
                         </div>
                     </div>
                     <p id="result-message"></p>
@@ -92,7 +102,21 @@
         </section>
     </main>
     <footer>
+        <div id="footer-content-info">
+            <div id="footer-info-about-cont">
 
+            </div>
+            <div id="footer-info-social-cont">
+
+            </div>
+            <div id="footer-info-menu-cont">
+
+            </div>
+        </div>
+        <div id="footer-credits-cont">
+            <p id="footer-credits-signature"></p>
+            <p id="footer-credits-built-by"></p>
+        </div>
     </footer>
 </body>
 
