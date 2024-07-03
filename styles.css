@@ -8,6 +8,7 @@
     --agc-font-s-med: 1rem;
     --agc-font-s-small: 0.9rem;
     --agc-app-width: 80%;
+    --agc-border-r: 5px;
 }
 
 /* App */
@@ -89,6 +90,15 @@ header {
 h1 {
     text-align: center;
     margin-top: 30px;
+}
+
+/* Data entry */
+#data-section {
+    border: 1px solid var(--agc-color-gray);
+    border-radius: var(--agc-border-r);
+    width: 60%;
+    margin: 20px auto 0 auto;
+    background-color: var(--agc-color-light-gray);
 }
 
 /* Media queries */
