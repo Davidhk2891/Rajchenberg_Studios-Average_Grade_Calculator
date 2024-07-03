@@ -1,15 +1,16 @@
 /* Variables */
-
 :root {
     --agc-color-white: white;
     --agc-color-gray: gray;
     --agc-color-black: black;
     --agc-color-light-gray: #F0F0F0;
     --agc-font-s-large: 1.2rem;
+    --agc-font-s-med: 1rem;
+    --agc-font-s-small: 0.9rem;
+    --agc-app-width: 80%;
 }
 
 /* App styling */
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -23,13 +24,12 @@ body {
 
 main {
     background-color: white;
-    width: 75%;
+    width: var(--agc-app-width);
     margin: 4px auto;
     border: 1px solid var(--agc-color-gray);
 }
 
 /* Header styling */
-
 header {
     display: flex;
     flex-direction: row;
@@ -71,6 +71,10 @@ header {
     list-style-type: none;
 }
 
+#header-nav-bar >li:nth-of-type(2) {
+    margin-right: 10px;
+}
+
 #header-nav-bar > li > a {
     color: var(--agc-color-black);
     text-decoration: none;
@@ -82,7 +86,6 @@ header {
 }
 
 /* Media queries */
-
 @media (prefers-reduced-motion: no-preference) {
     * {
         scroll-behavior: smooth;       
@@ -90,19 +93,103 @@ header {
 }
 
 @media only screen and (max-width: 800px) {
-    
+    /* Header */
+    #header-logo {
+        width: 40px;
+        height: 35px;
+    }
+
+    #header-logo-text {
+        font-size: var(--agc-font-s-med);
+    }
+
+    #header-nav-bar {
+
+    }
+
+    #header-nav-bar > li {
+
+    }
+
+    #header-nav-bar > li > a {
+        font-size: var(--agc-font-s-med);
+    }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 650px) {
+    /* Header */
+    #header-logo {
+        width: 35px;
+        height: 30px;
+    }
 
+    #header-logo-text {
+        font-size: var(--agc-font-s-small);
+    }
+
+    #header-nav-bar {
+
+    }
+
+    #header-nav-bar > li {
+
+    }
+
+    #header-nav-bar > li > a {
+        font-size: var(--agc-font-s-small);
+    }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 530px) {
+    /* Header */
+    #header-logo {
+        width: 35px;
+        height: 30px;
+    }
 
+    #header-logo-text {
+        display: none;
+    }
+
+    #header-nav-bar {
+
+    }
+
+    #header-nav-bar > li {
+
+    }
+
+    #header-nav-bar > li > a {
+        font-size: var(--agc-font-s-small);
+    }
 }
 
 @media only screen and (max-width: 550px) {
+    /* Header */
+    #header-logo {
+        width: 35px;
+        height: 30px;
+    }
 
+    #header-logo-text {
+        display: none;
+    }
+
+    #header-nav-bar {
+
+    }
+
+    #header-nav-bar > li {
+
+    }
+
+    #header-nav-bar > li:nth-of-type(1) {
+        
+    }
+
+    #header-nav-bar > li > a {
+        font-size: var(--agc-font-s-small);
+    }
 }
 
 @media only screen and (max-width: 420px) {
