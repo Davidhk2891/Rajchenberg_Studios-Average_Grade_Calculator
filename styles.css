@@ -4,11 +4,13 @@
     --agc-color-gray: gray;
     --agc-color-black: black;
     --agc-color-light-gray: #F0F0F0;
+    --rs-color-main: #062030; 
     --agc-font-s-large: 1.2rem;
     --agc-font-s-med: 1rem;
     --agc-font-s-small: 0.9rem;
     --agc-app-width: 80%;
     --agc-border-r: 5px;
+    --agc-padding-content: 10px;
 }
 
 /* App */
@@ -99,6 +101,18 @@ h1 {
     width: 60%;
     margin: 20px auto 0 auto;
     background-color: var(--agc-color-light-gray);
+    box-shadow: 0 0 3px 3px var(--agc-color-light-gray);
+}
+
+#data-section-title {
+    border: 1px solid black;
+    border-radius: var(--agc-border-r);
+    background-color: var(--rs-color-main);
+    color: var(--agc-color-white);
+    
+    text-align: center;
+    margin: 3px;
+    padding: 4px;
 }
 
 /* Media queries */
