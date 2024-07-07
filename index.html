@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="./styles.css" />
     <title>Average Grade Calculator</title>
+    <script src="./Utils/logger.js" defer></script>
     <script src="./script.js" defer></script>
 </head>
 
@@ -38,10 +40,10 @@
                         <div id="item-score-container">
                             <div id="item-container">
                                 <label>Item
-                                    <select id="item" value="exam">
-                                        <option value="exam">Exam</option>
-                                        <option value="quiz">Quiz</option>
-                                        <option value="project">Project</option>
+                                    <select id="item" value="Exam">
+                                        <option value="Exam">Exam</option>
+                                        <option value="Quiz">Quiz</option>
+                                        <option value="Project">Project</option>
                                         <option value="Mid term">Mid term</option>
                                         <option value="Pop quiz">Pop quiz</option>
                                         <option value="Presentation">Presentation</option>
@@ -52,18 +54,19 @@
                             </div>
                             <div id="score-container">
                                 <label>Score
-                                    <input id="score" type="number" min="1" max="100" value="1" width="50" />
+                                    <input id="score" type="number" min="0" max="100" value="1" width="50" />
                                 </label>
                             </div>
                         </div>
                     </div>
+                    <button id="add">Add</button>
                     <div id="data-set-container">
                         <p>Your data set</p>                        
                         <textarea 
                             id="data-set" 
                             placeholder="Your data will be displayed here."
                             rows="7"
-                            cols="30"
+                            cols="50"
                             readonly>
                         </textarea>
                     </div>

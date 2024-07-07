@@ -1,3 +1,17 @@
+// DOM elements
+const itemElement = document.querySelector('#item');
+const scoreElement = document.querySelector('#score');
+const addElement = document.querySelector('#add');
+const dataSetElement = document.querySelector('#data-set');
+
+// Fields
+let scoreItem = {
+    item : "Exam",
+    score : 0
+}
+let scoreItemArr = [];
+let dataSet = "";
+
 // Get average
 function getAverage(scores) {
 
@@ -59,3 +73,24 @@ function messageToStudent(scores) {
         studentMsg += ". You failed the course.";
     return studentMsg;
 }
+
+// Listeners
+itemElement.addEventListener('change', function(e) {
+
+    scoreItem.item = e.target.value;
+});
+
+scoreElement.addEventListener('change', function(e) {
+
+    scoreItem.score = e.target.value;
+});
+
+addElement.addEventListener('click', function() {
+
+    dataSet += `${scoreItem.item}: ${scoreItem.score}, `;
+    dataSetElement.value = dataSet;
+    itemElement.value = "Exam";
+    scoreElement.value = 0;
+    scoreItemArr.push(scoreItem);
+    testInput(JSON.stringify(scoreItemArr, null, 2));
+});
