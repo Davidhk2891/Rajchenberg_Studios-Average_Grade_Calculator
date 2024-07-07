@@ -17,7 +17,7 @@
     --agc-padding-content: 10px;
     --agc-padding-content-s: 5px;
     --agc-margin-t: 15px;
-    --agc-margin-bottom: 10px;
+    --agc-margin-b: 15px;
     --agc-padding-btn: 8px;
 }
 
@@ -102,7 +102,7 @@ h1 {
     margin-top: 30px;
 }
 
-/* Data entry */
+/* Sections */
 .main-section {
     border: 1px solid var(--agc-color-gray);
     border-radius: var(--agc-border-r);
@@ -112,6 +112,7 @@ h1 {
     box-shadow: 0 0 3px 3px var(--agc-color-light-gray);
 }
 
+/* Data entry */
 #data-section-title {
     border: 1px solid black;
     border-radius: var(--agc-border-r);
@@ -181,6 +182,21 @@ h1 {
 
 #add:hover, #clear:hover, #remove-last:hover {
     cursor: pointer;
+}
+
+/* Calculate button */
+#calculate-button {
+    display: block;
+    height: 40px;
+}
+
+#calculate-button:hover {
+    cursor: pointer;
+}
+
+/* Result */
+#result-section {
+    margin-bottom: var(--agc-margin-b);
 }
 
 /* Media queries */
