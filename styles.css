@@ -4,10 +4,21 @@
     --agc-color-gray: gray;
     --agc-color-black: black;
     --agc-color-light-gray: #F0F0F0;
+    --rs-color-main: #062030; 
     --agc-font-s-large: 1.2rem;
     --agc-font-s-med: 1rem;
     --agc-font-s-small: 0.9rem;
     --agc-app-width: 80%;
+    --agc-app-width-m: 98%;
+    --agc-section-width: 60%;
+    --agc-section-width-m: 80%;
+    --agc-section-width-sm: 98%;
+    --agc-border-r: 5px;
+    --agc-padding-content: 10px;
+    --agc-padding-content-s: 5px;
+    --agc-margin-t: 15px;
+    --agc-margin-bottom: 10px;
+    --agc-padding-btn: 8px;
 }
 
 /* App */
@@ -91,6 +102,87 @@ h1 {
     margin-top: 30px;
 }
 
+/* Data entry */
+.main-section {
+    border: 1px solid var(--agc-color-gray);
+    border-radius: var(--agc-border-r);
+    width: var(--agc-section-width);
+    margin: 20px auto 0 auto;
+    background-color: var(--agc-color-light-gray);
+    box-shadow: 0 0 3px 3px var(--agc-color-light-gray);
+}
+
+#data-section-title {
+    border: 1px solid black;
+    border-radius: var(--agc-border-r);
+    background-color: var(--rs-color-main);
+    color: var(--agc-color-white);
+    text-align: center;
+    margin: 3px;
+    padding: 4px;
+}
+
+#data-container {
+    margin-top: var(--agc-margin-t);
+}
+
+#data-entry-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+#item-score-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: var(--agc-margin-t);
+}
+
+#item {
+    width: 140px;
+}
+
+#score {
+    width: 60px;
+}
+
+#data-set-container {
+    margin-top: var(--agc-margin-t);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#data-set {
+    margin: var(--agc-margin-t) 0;
+    padding: var(--agc-padding-content-s);
+    width: 95%;
+}
+
+#add-clear-more-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: var(--agc-margin-t);
+}
+
+#add, #clear, #remove-last {
+    border: 0;
+    padding: var(--agc-padding-btn);
+    background-color: var(--agc-color-white);
+}
+
+#add:hover, #clear:hover, #remove-last:hover {
+    cursor: pointer;
+}
+
 /* Media queries */
 @media (prefers-reduced-motion: no-preference) {
     * {
@@ -107,7 +199,7 @@ h1 {
 
     #header-logo-text {
         font-size: var(--agc-font-s-med);
-        color: red;
+        color: yellow;
     }
 
     #header-nav-bar > li > a {
@@ -116,6 +208,12 @@ h1 {
 }
 
 @media only screen and (max-width: 650px) {
+
+    /* App */
+    main {
+        width: var(--agc-app-width-m);
+    }
+
     /* Header */
     #header-logo {
         width: 35px;
@@ -124,7 +222,7 @@ h1 {
 
     #header-logo-text {
         font-size: var(--agc-font-s-small);
-        color: yellow;
+        color: green;
     }
 
     #header-nav-bar > li > a {
@@ -135,9 +233,15 @@ h1 {
     h1 {
         font-size: var(--agc-font-s-large);
     }
+
+    /* Sections */
+    .main-section {
+        width: var(--agc-section-width-m);
+    }
 }
 
 @media only screen and (max-width: 530px) {
+
     /* Header */
     #header-logo {
         width: 35px;
@@ -146,7 +250,6 @@ h1 {
 
     #header-logo-text {
         display: none;
-        color: green;
     }
 
     #header-nav-bar > li > a {
@@ -157,9 +260,26 @@ h1 {
     h1 {
         font-size: var(--agc-font-s-med);
     }
+
+    /* Sections */
+    #item-score-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #add-clear-more-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 420px) {
     /* Header */
     #header-logo {
         width: 35px;
@@ -168,6 +288,11 @@ h1 {
 
     #header-nav-bar > li > a {
         font-size: var(--agc-font-s-small);
+    }
+
+    /* Sections */
+    .main-section {
+        width: var(--agc-section-width-sm);
     }
 }
 
