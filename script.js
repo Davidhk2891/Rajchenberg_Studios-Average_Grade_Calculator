@@ -4,13 +4,14 @@ const scoreElement = document.querySelector('#score');
 const addElement = document.querySelector('#add');
 const clearElement = document.querySelector('#clear');
 const dataSetElement = document.querySelector('#data-set');
+const removeLastElement = document.querySelector('#remove-last');
 
 // Fields
 let item = "Exam";
 let score = 0;
 
 let scoreItemArr = [];
-let dataSet = "";
+let dataSetString = "";
 
 // Get average
 function getAverage(scores) {
@@ -78,11 +79,65 @@ function messageToStudent(scores) {
 function clearData() {
 
     scoreItemArr.length = 0;
-    dataSet = "";
+    dataSetString = "";
     itemElement.value = "Exam";
     scoreElement.value = 0;
     dataSetElement.value = "";
     testInput(JSON.stringify(scoreItemArr, null, 2));
+}
+
+// Print data
+function printData() {
+    dataSetString = "";
+        for (let i = 0; i < scoreItemArr.length; i++) {
+            if (i == 0)
+                dataSetString += `${scoreItemArr[i].item}: ${scoreItemArr[i].score}`
+            else
+                dataSetString += `, ${scoreItemArr[i].item}: ${scoreItemArr[i].score}`
+        }
+        dataSetElement.value = dataSetString;
+}
+
+// Add item to array
+function addItem() {
+    // Check that score is less than or equal to 100
+    if (score <= 100) {
+
+        // Create local scoreItem
+        let scoreItem = {
+            item : "Exam",
+            score : 0
+        }
+
+        // Add input elements to scoreItem
+        scoreItem.item = item;
+        scoreItem.score = score;
+
+        // Push the recently-populated scoreItem to the scoreItemArr array
+        scoreItemArr.push(scoreItem);
+
+        // Print the scoreItemArr array to console
+        testInput(JSON.stringify(scoreItemArr, null, 2));
+
+        // Print data to Web app UI
+        printData();
+
+    } else {
+        alert("Score can't be greater than 100");
+    }
+}
+
+// Remove last item from array
+function removeLastItem() {
+
+    // Remove the last element from the scoreItemArr array
+    scoreItemArr.pop();
+    
+    // Print the scoreItemArr to console
+    testInput(JSON.stringify(scoreItemArr, null, 2));
+
+    // Print data to Web app UI
+    printData();
 }
 
 // Listeners
@@ -98,23 +153,18 @@ scoreElement.addEventListener('change', function(e) {
 
 addElement.addEventListener('click', function() {
 
-    if (score <= 100) {
-        let scoreItem = {
-            item : "Exam",
-            score : 0
-        }
-        scoreItem.item = item;
-        scoreItem.score = score;
-        scoreItemArr.push(scoreItem);
-        dataSet += `${scoreItem.item}: ${scoreItem.score}, `;
-        dataSetElement.value = dataSet;
-        testInput(JSON.stringify(scoreItemArr, null, 2));
-    } else {
-        alert("Score can't be greater than 100");
-    }
+    // Add item
+    addItem();
 });
 
 clearElement.addEventListener('click', function() {
     
+    // Clear all data
     clearData();
+});
+
+removeLastElement.addEventListener('click', function() {
+
+    // Remove last item
+    removeLastItem();
 });

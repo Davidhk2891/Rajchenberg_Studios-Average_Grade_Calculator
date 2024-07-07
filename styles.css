@@ -169,13 +169,13 @@ h1 {
     margin-top: var(--agc-margin-t);
 }
 
-#add, #clear {
+#add, #clear, #remove-last {
     border: 0;
     padding: var(--agc-padding-btn);
     background-color: var(--agc-color-white);
 }
 
-#add:hover, #clear:hover {
+#add:hover, #clear:hover, #remove-last:hover {
     cursor: pointer;
 }
 
