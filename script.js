@@ -2,13 +2,13 @@
 const itemElement = document.querySelector('#item');
 const scoreElement = document.querySelector('#score');
 const addElement = document.querySelector('#add');
+const clearElement = document.querySelector('#clear');
 const dataSetElement = document.querySelector('#data-set');
 
 // Fields
-let scoreItem = {
-    item : "Exam",
-    score : 0
-}
+let item = "Exam";
+let score = 0;
+
 let scoreItemArr = [];
 let dataSet = "";
 
@@ -19,7 +19,7 @@ function getAverage(scores) {
     for (const score of scores) {
         scoresSum += score;
     }
-    return scoresSum;
+    return scoresSum / scores.length;
 }
 
 // get letter grade
@@ -59,7 +59,7 @@ function getLetterGrade(score) {
 
 // Did student pass course
 function approvedCourse(score) {
-    return getLetterGrade(score) == "F" ? true : false;
+    return getLetterGrade(score) == "F" ? false : true;
 }
 
 // Message to student
@@ -74,23 +74,47 @@ function messageToStudent(scores) {
     return studentMsg;
 }
 
+// Clear data
+function clearData() {
+
+    scoreItemArr.length = 0;
+    dataSet = "";
+    itemElement.value = "Exam";
+    scoreElement.value = 0;
+    dataSetElement.value = "";
+    testInput(JSON.stringify(scoreItemArr, null, 2));
+}
+
 // Listeners
 itemElement.addEventListener('change', function(e) {
 
-    scoreItem.item = e.target.value;
+    item = e.target.value;
 });
 
 scoreElement.addEventListener('change', function(e) {
 
-    scoreItem.score = e.target.value;
+    score = Number(e.target.value);
 });
 
 addElement.addEventListener('click', function() {
 
-    dataSet += `${scoreItem.item}: ${scoreItem.score}, `;
-    dataSetElement.value = dataSet;
-    itemElement.value = "Exam";
-    scoreElement.value = 0;
-    scoreItemArr.push(scoreItem);
-    testInput(JSON.stringify(scoreItemArr, null, 2));
+    if (score <= 100) {
+        let scoreItem = {
+            item : "Exam",
+            score : 0
+        }
+        scoreItem.item = item;
+        scoreItem.score = score;
+        scoreItemArr.push(scoreItem);
+        dataSet += `${scoreItem.item}: ${scoreItem.score}, `;
+        dataSetElement.value = dataSet;
+        testInput(JSON.stringify(scoreItemArr, null, 2));
+    } else {
+        alert("Score can't be greater than 100");
+    }
+});
+
+clearElement.addEventListener('click', function() {
+    
+    clearData();
 });
