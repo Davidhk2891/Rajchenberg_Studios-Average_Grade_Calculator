@@ -4,39 +4,47 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="./styles.css" />
-    <title>Grade Book Reader 6</title>
+    <title>Average Grade Calculator</title>
+    <script src="./Utils/logger.js" defer></script>
+    <script src="./result.js" defer></script>
     <script src="./script.js" defer></script>
 </head>
 
 <body>
     <main>
         <header>
-            <div>
-                <img src="images/rs_logo.png" alt="Company Logo" id="header-logo" width="100" height="100" />
+            <div id="header-logo-bundle">
+                <img 
+                    src="images/rs_logo.png" 
+                    alt="Company Logo" 
+                    id="header-logo" 
+                    width="50" 
+                    height="45" />
                 <p id="header-logo-text">Rajchenberg Studios</p>
             </div>
             <nav id="header-nav">
                 <ul id="header-nav-bar">
-                    <li><a class="header-nav-link" href="#avg-calc">Average Calculator</a></li>
+                    <li><a class="header-nav-link" href="#data-container">Avg Grade Calc</a></li>
                     <li><a class="header-nav-link" href="#about">About</a></li>
                 </ul>
             </nav>
         </header>
         <section id="main-content-section">
-            <h1>Average Grade Calculator</h1>
+            <h1>Average (Mean) Grade Calculator</h1>
             <section id="data-section" class="main-section">
-                <h3>Data</h3>
+                <h3 class="data-section-title">Data</h3>
                 <div id="data-container">
                     <div id="data-entry-container">
                         <p>Enter data</p>
                         <div id="item-score-container">
                             <div id="item-container">
                                 <label>Item
-                                    <select id="item" value="exam">
-                                        <option value="exam">Exam</option>
-                                        <option value="quiz">Quiz</option>
-                                        <option value="project">Project</option>
+                                    <select id="item" value="Exam">
+                                        <option value="Exam">Exam</option>
+                                        <option value="Quiz">Quiz</option>
+                                        <option value="Project">Project</option>
                                         <option value="Mid term">Mid term</option>
                                         <option value="Pop quiz">Pop quiz</option>
                                         <option value="Presentation">Presentation</option>
@@ -47,52 +55,53 @@
                             </div>
                             <div id="score-container">
                                 <label>Score
-                                    <input type="number" min="1" max="100" value="1" width="50" />
+                                    <input id="score" type="number" min="0" max="100" value="1" width="50" />
                                 </label>
                             </div>
-                        </div>                        
+                        </div>
+                    </div>
+                    <div id="add-clear-more-container">
+                        <button id="add">Add</button>
+                        <button id="clear">Clear</button>
+                        <button id="remove-last">Remove last</button>
                     </div>
                     <div id="data-set-container">
-                        <p>Your data set</p>
-                        <div id="data-set-result-container"></div>
+                        <p>Your data set</p>                        
+                        <textarea 
+                            id="data-set" 
+                            placeholder="Your data will be displayed here."
+                            rows="7"
+                            cols="50"
+                            readonly>
+                        </textarea>
                     </div>
                 </div>
             </section>
-            <section id="calculate-section">
-                <div id="calc-clear-container">
-                    <button id="clear-button">Clear</button>
-                    <button id="calculate-button">Calculate</button>
-                </div>
-            </section>
+            <button id="calculate-button" class="main-section">Calculate</button>
             <section id="result-section" class="main-section">
-                <h3>Result</h3>
+                <h3 class="data-section-title">Result</h3>
                 <div id="result-container">
-                    <div id="result-data-container">
-                        <div id="result-avg-cont">
-                            <p id="result-avg"></p>
-                        </div>
-                        <div id="result-count-cont">
-                            <p id="result-count"></p>
-                        </div>
-                        <div id="result-sum-cont">
-                            <p id="result-sum"></p>
-                        </div>
-                    </div>
-                    <div id="result-main-container">
-                        <div id="result-main-table-container">
-                            
-                        </div>
-                        <div id="result-main-summary-container">
-
-                        </div>
-                    </div>
-                    <p id="result-message"></p>
+                    <p id="result-message">The result will be displayed here.</p>
                 </div>
             </section>
         </section>
     </main>
     <footer>
+        <div id="footer-content-info">
+            <div id="footer-info-about-cont">
 
+            </div>
+            <div id="footer-info-social-cont">
+
+            </div>
+            <div id="footer-info-menu-cont">
+
+            </div>
+        </div>
+        <div id="footer-credits-cont">
+            <p id="footer-credits-signature"></p>
+            <p id="footer-credits-built-by"></p>
+        </div>
     </footer>
 </body>
 
