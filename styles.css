@@ -36,6 +36,7 @@ body {
 main {
     background-color: white;
     width: var(--agc-app-width);
+    height: fit-content;
     margin: 4px auto;
     border: 1px solid var(--agc-color-gray);
 }
@@ -265,6 +266,28 @@ th, td {
     padding: 10px;
     text-align: center;
     margin: 6px;
+}
+
+/* About page */
+.about-text {
+    padding: 12px;
+    margin: var(--agc-margin-t) 20px;
+}
+
+/* Footer */
+#footer-credits-cont {
+    margin-top: var(--agc-margin-t);
+    margin-bottom: var(--agc-margin-b);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+}
+
+#footer-credits-cont > p {
+    text-align: center;
 }
 
 /* Media queries */
