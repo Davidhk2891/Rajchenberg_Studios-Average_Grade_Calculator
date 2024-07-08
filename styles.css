@@ -306,7 +306,6 @@ th, td {
 
     #header-logo-text {
         font-size: var(--agc-font-s-med);
-        color: yellow;
     }
 
     #header-nav-bar > li > a {
@@ -329,7 +328,6 @@ th, td {
 
     #header-logo-text {
         font-size: var(--agc-font-s-small);
-        color: green;
     }
 
     #header-nav-bar > li > a {
