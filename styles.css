@@ -208,6 +208,11 @@ h1 {
     margin-bottom: var(--agc-margin-b);
 }
 
+/* Result - Dynamic content */
+#result-data-cont {
+    border: 1px solid black;
+}
+
 /* Media queries */
 @media (prefers-reduced-motion: no-preference) {
     * {

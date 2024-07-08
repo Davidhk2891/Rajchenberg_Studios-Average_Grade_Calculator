@@ -14,7 +14,18 @@ let item = "Exam";
 let score = 0;
 
 let scoreItemArr = [];
+let scores = [];
 let dataSetString = "";
+
+// Get sum
+function getSum(scores) {
+
+    let scoresSum = 0;
+    for (const score of scores) {
+        scoresSum += score;
+    }
+    return scoresSum;
+}
 
 // Get average
 function getAverage(scores) {
@@ -120,6 +131,9 @@ function addItem() {
 
         // Push the recently-populated scoreItem to the scoreItemArr array
         scoreItemArr.push(scoreItem);
+
+        // Push the scoreItem.score to the scores array
+        scores.push(scoreItem.score);
 
         // Print the scoreItemArr array to console
         testInput(JSON.stringify(scoreItemArr, null, 2));

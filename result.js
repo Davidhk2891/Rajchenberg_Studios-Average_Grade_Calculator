@@ -4,13 +4,13 @@ function generateResultTemplate() {
     let dynamicHTML = `
         <div id="result-data-cont">
             <div id="result-avg-cont">
-                <p id="result-avg"></p>
+                <p id="result-avg">Average: x = ${getAverage(scores)}</p>
             </div>
             <div id="result-count-cont">
-                <p id="result-count"></p>
+                <p id="result-count">Count: n = ${scores.length}</p>
             </div>
             <div id="result-sum-cont">
-                <p id="result-sum"></p>
+                <p id="result-sum">Sum: sum = ${getSum(scores)}</p>
             </div>
         </div>
         <div id="result-main-cont">
