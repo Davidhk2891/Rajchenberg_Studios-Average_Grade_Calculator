@@ -210,10 +210,30 @@ h1 {
 
 /* Result - Dynamic content */
 #result-data-cont {
-    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: var(--agc-margin-t) auto;
 }
 
+#result-data-divider {
+    width: 85%;
+    display: block;
+    margin: var(--agc-margin-t) auto;
+}
 
+#result-main-cont {
+
+}
+
+#result-main-table-cont {
+
+}
+
+#result-main-summary-cont {
+    
+}
 
 /* Media queries */
 @media (prefers-reduced-motion: no-preference) {

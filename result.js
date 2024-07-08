@@ -3,29 +3,24 @@ function generateResultTemplate() {
     resultMsgElement.style.display = "none";
     let dynamicHTML = `
         <div id="result-data-cont">
-            <div id="result-avg-cont">
-                <p id="result-avg">Average: x = ${getAverage(scores).toFixed(2)}</p>
-            </div>
-            <div id="result-count-cont">
-                <p id="result-count">Count: n = ${scores.length}</p>
-            </div>
-            <div id="result-sum-cont">
-                <p id="result-sum">Sum: sum = ${getSum(scores).toFixed(2)}</p>
-            </div>
+            <p id="result-avg">Average: x = ${getAverage(scores).toFixed(2)}</p>
+            <p> | </p>
+            <p id="result-count">Count: n = ${scores.length}</p>
+            <p> | </p>
+            <p id="result-sum">Sum: sum = ${getSum(scores).toFixed(2)}</p>
         </div>
+        <hr id="result-data-divider">
         <div id="result-main-cont">
             <div id="result-main-table-cont">
-                <table
-                    style="
-                        border: 1px solid black;">
-                            <thead>
-                                <tr>
-                                    <th>Item</th>
-                                    <th>Score</th>
-                                    <th>Grade</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Score</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
     `;
     for (let i = 0; i < scoreItemArr.length; i++) {
         dynamicHTML += `
@@ -43,10 +38,17 @@ function generateResultTemplate() {
     `;  
     dynamicHTML += `
             <div id="result-main-summary-cont">
-
+                <p id="result-main-final-score">Your average score: 
+                    ${getAverage(scores).toFixed(2)}</p>
+                <p id="result-main-final-grade">Final grade: 
+                    ${getLetterGrade(getAverage(scores).toFixed(2))}</p>
             </div>
         </div>
     `;  
+
+    dynamicHTML += `
+        <p id="result-final-student-msg">${messageToStudent(scores)}</p>
+    `;
 
     resultContElement.innerHTML = dynamicHTML;
 }

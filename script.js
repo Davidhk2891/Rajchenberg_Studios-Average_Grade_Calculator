@@ -85,7 +85,7 @@ function approvedCourse(score) {
 function messageToStudent(scores) {
     
     let average = getAverage(scores);
-    let studentMsg = "Your average: " + average + ". Your grade: " + getLetterGrade(average);
+    let studentMsg = "Your average: " + average.toFixed(2) + ". Your grade: " + getLetterGrade(average);
     if (approvedCourse(average))
         studentMsg += ". You passed the course.";
     else
@@ -200,6 +200,8 @@ function executeMeanCalculation() {
                 score : 50
             }
         ]
+        
+        scores = [96.7, 95.6, 80, 76.2, 77, 56.8, 99, 50];
     }
 
     if (scoreItemArr.length == 0) {
