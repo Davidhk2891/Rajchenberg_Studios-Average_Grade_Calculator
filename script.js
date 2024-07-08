@@ -5,13 +5,30 @@ const addElement = document.querySelector('#add');
 const clearElement = document.querySelector('#clear');
 const dataSetElement = document.querySelector('#data-set');
 const removeLastElement = document.querySelector('#remove-last');
+const calculateBtnElement = document.querySelector('#calculate-button');
+const resultContElement = document.querySelector('#result-container');
+const resultMsgElement = document.querySelector('#result-message');
+
+// Testing
+let isTestingOn = true;
 
 // Fields
 let item = "Exam";
 let score = 0;
 
 let scoreItemArr = [];
+let scores = [];
 let dataSetString = "";
+
+// Get sum
+function getSum(scores) {
+
+    let scoresSum = 0;
+    for (const score of scores) {
+        scoresSum += score;
+    }
+    return scoresSum;
+}
 
 // Get average
 function getAverage(scores) {
@@ -60,6 +77,7 @@ function getLetterGrade(score) {
 
 // Did student pass course
 function approvedCourse(score) {
+
     return getLetterGrade(score) == "F" ? false : true;
 }
 
@@ -67,7 +85,7 @@ function approvedCourse(score) {
 function messageToStudent(scores) {
     
     let average = getAverage(scores);
-    let studentMsg = "Your average: " + average + ". Your grade: " + getLetterGrade(average);
+    let studentMsg = "Your average: " + average.toFixed(2) + ". Your grade: " + getLetterGrade(average);
     if (approvedCourse(average))
         studentMsg += ". You passed the course.";
     else
@@ -88,6 +106,7 @@ function clearData() {
 
 // Print data
 function printData() {
+
     dataSetString = "";
         for (let i = 0; i < scoreItemArr.length; i++) {
             if (i == 0)
@@ -116,6 +135,9 @@ function addItem() {
         // Push the recently-populated scoreItem to the scoreItemArr array
         scoreItemArr.push(scoreItem);
 
+        // Push the scoreItem.score to the scores array
+        scores.push(scoreItem.score);
+
         // Print the scoreItemArr array to console
         testInput(JSON.stringify(scoreItemArr, null, 2));
 
@@ -140,14 +162,65 @@ function removeLastItem() {
     printData();
 }
 
+// Execute mean calculation
+function executeMeanCalculation() {
+    
+    if (isTestingOn) {
+        scoreItemArr = [
+            {
+                item : "Exam",
+                score : 96.7
+            },
+            {
+                item : "Quiz",
+                score : 95.6
+            },
+            {
+                item : "Presentation",
+                score : 80
+            },
+            {
+                item : "Exam",
+                score : 76.2
+            },
+            {
+                item : "Exam",
+                score : 77
+            },
+            {
+                item : "Mid term",
+                score : 56.8
+            },
+            {
+                item : "Final project",
+                score : 99
+            },
+            {
+                item : "Final exam",
+                score : 50
+            }
+        ]
+        
+        scores = [96.7, 95.6, 80, 76.2, 77, 56.8, 99, 50];
+    }
+
+    if (scoreItemArr.length == 0) {
+        alert("There is nothing to calculate");
+        return;
+    }
+    generateResult();
+}
+
 // Listeners
 itemElement.addEventListener('change', function(e) {
 
+    // Store selected item
     item = e.target.value;
 });
 
 scoreElement.addEventListener('change', function(e) {
 
+    // Store selected score
     score = Number(e.target.value);
 });
 
@@ -167,4 +240,10 @@ removeLastElement.addEventListener('click', function() {
 
     // Remove last item
     removeLastItem();
+});
+
+calculateBtnElement.addEventListener('click', function() {
+
+    // Calculate
+    executeMeanCalculation();
 });

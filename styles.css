@@ -17,7 +17,7 @@
     --agc-padding-content: 10px;
     --agc-padding-content-s: 5px;
     --agc-margin-t: 15px;
-    --agc-margin-bottom: 10px;
+    --agc-margin-b: 15px;
     --agc-padding-btn: 8px;
 }
 
@@ -102,7 +102,7 @@ h1 {
     margin-top: 30px;
 }
 
-/* Data entry */
+/* Sections */
 .main-section {
     border: 1px solid var(--agc-color-gray);
     border-radius: var(--agc-border-r);
@@ -112,7 +112,8 @@ h1 {
     box-shadow: 0 0 3px 3px var(--agc-color-light-gray);
 }
 
-#data-section-title {
+/* Data entry */
+.data-section-title {
     border: 1px solid black;
     border-radius: var(--agc-border-r);
     background-color: var(--rs-color-main);
@@ -162,6 +163,7 @@ h1 {
     margin: var(--agc-margin-t) 0;
     padding: var(--agc-padding-content-s);
     width: 95%;
+    resize: none;
 }
 
 #add-clear-more-container {
@@ -181,6 +183,88 @@ h1 {
 
 #add:hover, #clear:hover, #remove-last:hover {
     cursor: pointer;
+}
+
+/* Calculate button */
+#calculate-button {
+    display: block;
+    height: 40px;
+}
+
+#calculate-button:hover {
+    cursor: pointer;
+    background-color: rgba(240, 240, 240, 0.2);
+    color: var(--rs-color-main);
+}
+
+/* Result */
+#result-section {
+    margin-bottom: var(--agc-margin-b);
+}
+
+#result-message {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--agc-margin-t);
+    margin-bottom: var(--agc-margin-b);
+}
+
+/* Result - Dynamic content */
+#result-data-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: var(--agc-margin-t) auto;
+}
+
+#result-avg, #result-count, #result-sum {
+    text-align: center;
+    margin: 8px;
+}
+
+#result-data-divider {
+    width: 85%;
+    display: block;
+    margin: var(--agc-margin-t) auto;
+}
+
+#result-main-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4px;
+    margin: 8px; 
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+#result-main-summary-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#result-main-final-score, #result-main-final-grade {
+    text-align: center;
+    padding: 6px;
+}
+
+#result-final-student-msg {
+    padding: 10px;
+    text-align: center;
+    margin: 6px;
 }
 
 /* Media queries */
@@ -275,6 +359,17 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 10px;
+    }
+
+    #result-main-cont {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #result-main-summary-cont {
         gap: 10px;
     }
 }
