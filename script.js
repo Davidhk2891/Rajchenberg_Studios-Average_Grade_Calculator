@@ -5,6 +5,9 @@ const addElement = document.querySelector('#add');
 const clearElement = document.querySelector('#clear');
 const dataSetElement = document.querySelector('#data-set');
 const removeLastElement = document.querySelector('#remove-last');
+const calculateBtnElement = document.querySelector('#calculate-button');
+const resultContElement = document.querySelector('#result-container');
+const resultMsgElement = document.querySelector('#result-message');
 
 // Fields
 let item = "Exam";
@@ -60,6 +63,7 @@ function getLetterGrade(score) {
 
 // Did student pass course
 function approvedCourse(score) {
+
     return getLetterGrade(score) == "F" ? false : true;
 }
 
@@ -88,6 +92,7 @@ function clearData() {
 
 // Print data
 function printData() {
+
     dataSetString = "";
         for (let i = 0; i < scoreItemArr.length; i++) {
             if (i == 0)
@@ -140,14 +145,26 @@ function removeLastItem() {
     printData();
 }
 
+// Execute mean calculation
+function executeMeanCalculation() {
+    
+    if (scoreItemArr.length == 0) {
+        alert("There is nothing to calculate");
+        return;
+    }
+    generateResult();
+}
+
 // Listeners
 itemElement.addEventListener('change', function(e) {
 
+    // Store selected item
     item = e.target.value;
 });
 
 scoreElement.addEventListener('change', function(e) {
 
+    // Store selected score
     score = Number(e.target.value);
 });
 
@@ -167,4 +184,10 @@ removeLastElement.addEventListener('click', function() {
 
     // Remove last item
     removeLastItem();
+});
+
+calculateBtnElement.addEventListener('click', function() {
+
+    // Calculate
+    executeMeanCalculation();
 });

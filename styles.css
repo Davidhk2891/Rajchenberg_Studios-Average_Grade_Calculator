@@ -113,7 +113,7 @@ h1 {
 }
 
 /* Data entry */
-#data-section-title {
+.data-section-title {
     border: 1px solid black;
     border-radius: var(--agc-border-r);
     background-color: var(--rs-color-main);
@@ -192,10 +192,19 @@ h1 {
 
 #calculate-button:hover {
     cursor: pointer;
+    background-color: rgba(240, 240, 240, 0.2);
+    color: var(--rs-color-main);
 }
 
 /* Result */
 #result-section {
+    margin-bottom: var(--agc-margin-b);
+}
+
+#result-message {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--agc-margin-t);
     margin-bottom: var(--agc-margin-b);
 }
 

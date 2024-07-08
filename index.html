@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>Average Grade Calculator</title>
     <script src="./Utils/logger.js" defer></script>
+    <script src="./result.js" defer></script>
     <script src="./script.js" defer></script>
 </head>
 
@@ -33,7 +34,7 @@
         <section id="main-content-section">
             <h1>Average (Mean) Grade Calculator</h1>
             <section id="data-section" class="main-section">
-                <h3 id="data-section-title">Data</h3>
+                <h3 class="data-section-title">Data</h3>
                 <div id="data-container">
                     <div id="data-entry-container">
                         <p>Enter data</p>
@@ -78,38 +79,9 @@
             </section>
             <button id="calculate-button" class="main-section">Calculate</button>
             <section id="result-section" class="main-section">
-                <h3>Result</h3>
+                <h3 class="data-section-title">Result</h3>
                 <div id="result-container">
-                    <div id="result-data-container">
-                        <div id="result-avg-cont">
-                            <p id="result-avg"></p>
-                        </div>
-                        <div id="result-count-cont">
-                            <p id="result-count"></p>
-                        </div>
-                        <div id="result-sum-cont">
-                            <p id="result-sum"></p>
-                        </div>
-                    </div>
-                    <div id="result-main-container">
-                        <div id="result-main-table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Score</th>
-                                        <th>Grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                        </div>
-                        <div id="result-main-summary-container">
-                            <p id="msg-avg-final-score"></p>
-                            <p id="msg-final-grade"></p>
-                        </div>
-                    </div>
-                    <p id="result-message"></p>
+                    <p id="result-message">The result will be displayed here.</p>
                 </div>
             </section>
         </section>
