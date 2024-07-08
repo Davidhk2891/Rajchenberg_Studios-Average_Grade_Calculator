@@ -267,6 +267,12 @@ th, td {
     margin: 6px;
 }
 
+/* About page */
+.about-text {
+    padding: 12px;
+    margin: var(--agc-margin-t) 20px;
+}
+
 /* Media queries */
 @media (prefers-reduced-motion: no-preference) {
     * {
