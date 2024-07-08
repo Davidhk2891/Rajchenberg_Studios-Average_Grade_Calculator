@@ -163,6 +163,7 @@ h1 {
     margin: var(--agc-margin-t) 0;
     padding: var(--agc-padding-content-s);
     width: 95%;
+    resize: none;
 }
 
 #add-clear-more-container {
@@ -217,6 +218,11 @@ h1 {
     margin: var(--agc-margin-t) auto;
 }
 
+#result-avg, #result-count, #result-sum {
+    text-align: center;
+    margin: 8px;
+}
+
 #result-data-divider {
     width: 85%;
     display: block;
@@ -224,15 +230,41 @@ h1 {
 }
 
 #result-main-cont {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4px;
+    margin: 8px; 
 }
 
-#result-main-table-cont {
+table {
+    border-collapse: collapse;
+}
 
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
 }
 
 #result-main-summary-cont {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#result-main-final-score, #result-main-final-grade {
+    text-align: center;
+    padding: 6px;
+}
+
+#result-final-student-msg {
+    padding: 10px;
+    text-align: center;
+    margin: 6px;
 }
 
 /* Media queries */
@@ -327,6 +359,17 @@ h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 10px;
+    }
+
+    #result-main-cont {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #result-main-summary-cont {
         gap: 10px;
     }
 }

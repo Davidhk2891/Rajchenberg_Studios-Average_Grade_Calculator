@@ -12,8 +12,8 @@ function generateResultTemplate() {
         <hr id="result-data-divider">
         <div id="result-main-cont">
             <div id="result-main-table-cont">
-                <table>
-                    <thead>
+                <table id="result-main-table">
+                    <thead id="main-table-head">
                         <tr>
                             <th>Item</th>
                             <th>Score</th>
@@ -47,7 +47,7 @@ function generateResultTemplate() {
     `;  
 
     dynamicHTML += `
-        <p id="result-final-student-msg">${messageToStudent(scores)}</p>
+    <p id="result-final-student-msg">${messageToStudent(scores)}</p>
     `;
 
     resultContElement.innerHTML = dynamicHTML;
