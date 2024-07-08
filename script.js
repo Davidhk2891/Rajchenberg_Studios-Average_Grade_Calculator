@@ -9,6 +9,9 @@ const calculateBtnElement = document.querySelector('#calculate-button');
 const resultContElement = document.querySelector('#result-container');
 const resultMsgElement = document.querySelector('#result-message');
 
+// Testing
+let isTestingOn = true;
+
 // Fields
 let item = "Exam";
 let score = 0;
@@ -162,6 +165,43 @@ function removeLastItem() {
 // Execute mean calculation
 function executeMeanCalculation() {
     
+    if (isTestingOn) {
+        scoreItemArr = [
+            {
+                item : "Exam",
+                score : 96.7
+            },
+            {
+                item : "Quiz",
+                score : 95.6
+            },
+            {
+                item : "Presentation",
+                score : 80
+            },
+            {
+                item : "Exam",
+                score : 76.2
+            },
+            {
+                item : "Exam",
+                score : 77
+            },
+            {
+                item : "Mid term",
+                score : 56.8
+            },
+            {
+                item : "Final project",
+                score : 99
+            },
+            {
+                item : "Final exam",
+                score : 50
+            }
+        ]
+    }
+
     if (scoreItemArr.length == 0) {
         alert("There is nothing to calculate");
         return;
